@@ -1,6 +1,19 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FaHome, FaCube, FaColumns, FaMicrophone, FaShapes, FaCalculator, FaRuler, FaKey, FaMouse, FaList } from "react-icons/fa";
+import {
+  FaHome,
+  FaCube,
+  FaColumns,
+  FaMicrophone,
+  FaShapes,
+  FaCalculator,
+  FaRuler,
+  FaKey,
+  FaMouse,
+  FaList,
+  FaRobot,
+  FaGlobeAmericas,
+} from "react-icons/fa";
 
 interface SidebarItem {
   label: string;
@@ -10,10 +23,12 @@ interface SidebarItem {
 
 const mainItems: SidebarItem[] = [
   { label: "Inicio", route: "/", icon: <FaHome /> },
-  { label: "Three.js Demo", route: "/three", icon: <FaCube /> },
+  { label: "Ciclo del Agua 3D", route: "/three", icon: <FaCube /> },
   { label: "Responsive Layouts", route: "/layouts", icon: <FaColumns /> },
   { label: "Text-to-Speech", route: "/tts", icon: <FaMicrophone /> },
   { label: "Figuras Geometricas", route: "/three_2", icon: <FaShapes /> },
+  { label: "Simulación de Robots", route: "/robots", icon: <FaRobot /> },
+  { label: "Mapa 3D Interactivo", route: "/mapa3d", icon: <FaGlobeAmericas /> },
 ];
 
 const exerciseItems: SidebarItem[] = [
