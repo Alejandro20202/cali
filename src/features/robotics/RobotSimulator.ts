@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 export type RobotCommand = "forward" | "back" | "left" | "right";
 
 export interface RobotState {
