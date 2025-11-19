@@ -1,4 +1,7 @@
-export default {
+/* eslint-env node */
+
+/* eslint-env node */
+module.exports = {
   testEnvironment: "jsdom",
   moduleNameMapper: {
     "^.+\\.(css|scss|sass|less)$": "identity-obj-proxy",
