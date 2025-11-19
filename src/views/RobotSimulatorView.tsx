@@ -86,7 +86,10 @@ export default function RobotSimulatorView() {
           </div>
 
           <div className="text-center text-sm text-slate-500 dark:text-slate-400">
-            Posición actual: <span className="font-semibold text-slate-800 dark:text-slate-100">({position.x}, {position.y})</span>
+            Posición actual:{" "}
+            <span className="font-semibold text-slate-800 dark:text-slate-100">
+              ({position.x}, {position.y})
+            </span>
           </div>
         </div>
 
