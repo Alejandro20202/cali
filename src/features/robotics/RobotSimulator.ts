@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 export type RobotCommand = "forward" | "back" | "left" | "right";
 
 export interface RobotState {
@@ -8,6 +7,10 @@ export interface RobotState {
 
 type Listener = (state: RobotState, command: RobotCommand) => void;
 
+/**
+ * Simple logical robot that moves on a square grid and keeps track of
+ * every command executed. Pure logic makes it friendly for Jest tests.
+ */
 export class RobotSimulator {
   private readonly listeners = new Set<Listener>();
   private state: RobotState = { x: 0, y: 0 };

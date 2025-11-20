@@ -14,7 +14,7 @@ if (typeof global.TextDecoder === "undefined") {
 
 Object.defineProperty(window, "matchMedia", {
   writable: true,
-  value: (query: string) => ({ 
+  value: (query: string) => ({
     matches: false,
     media: query,
     onchange: null,
@@ -34,19 +34,4 @@ Object.defineProperty(window, "localStorage", {
     removeItem: jest.fn(),
   },
   writable: true,
-});
-
-Object.defineProperty(document, "documentElement", {
-  value: {
-    classList: {
-      toggle: jest.fn(),
-      add: jest.fn(),
-      remove: jest.fn(),
-    },
-  },
-  writable: true,
-});
-
-Object.defineProperty(document, "dispatchEvent", {
-  value: jest.fn(),
 });

@@ -16,7 +16,7 @@ export class WaterCycleController {
   private readonly listeners = new Set<(phase: WaterCyclePhase) => void>();
   private phaseIndex = 0;
   private elapsed = 0;
-
+  public isPlaying = true;
   constructor(phases: PhaseConfig[]) {
     if (!phases.length) {
       throw new Error("WaterCycleController requires at least one phase");
@@ -46,7 +46,7 @@ export class WaterCycleController {
   }
 
   update(deltaSeconds: number): WaterCyclePhase {
-    if (deltaSeconds <= 0) {
+    if (!this.isPlaying || deltaSeconds <= 0) {
       return this.currentPhase;
     }
 
@@ -60,6 +60,10 @@ export class WaterCycleController {
     }
 
     return phase.name;
+  }
+
+  togglePlay() {
+    this.isPlaying = !this.isPlaying;
   }
 
   private advancePhase() {
