@@ -1,7 +1,3 @@
-/* eslint-disable no-unused-vars */
-
-/* eslint-disable no-unused-vars */
-
 export interface WaterCycleState {
   progress: number;
   phase: "evaporation" | "condensation" | "precipitation";
@@ -11,13 +7,14 @@ export class WaterCycleController {
   private state: WaterCycleState = { progress: 0, phase: "evaporation" };
 
   startCycle() {
-    // Aquí podrías implementar la lógica del ciclo de agua
-    console.log("Ciclo iniciado");
+    this.state = { progress: 0, phase: "evaporation" };
   }
 
   advancePhase() {
-    // Lógica para avanzar fases
-    console.log("Fase actual:", this.state.phase);
+    const order: WaterCycleState["phase"][] = ["evaporation", "condensation", "precipitation"];
+    const currentIndex = order.indexOf(this.state.phase);
+    const nextPhase = order[(currentIndex + 1) % order.length];
+    this.state = { phase: nextPhase, progress: 0 };
   }
 
   getState() {

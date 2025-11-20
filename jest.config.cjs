@@ -1,6 +1,4 @@
 /* eslint-env node */
-
-/* eslint-env node */
 module.exports = {
   testEnvironment: "jsdom",
   moduleNameMapper: {

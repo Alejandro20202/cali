@@ -98,7 +98,7 @@ function createFallbackCycle(): { group: THREE.Group } & CycleTargets {
   };
 }
 
-function createPhaseConfigs(targets: CycleTargets, reportProgress: (value: number) => void): PhaseConfig[] {
+function createPhaseConfigs(targets: CycleTargets, reportProgress: (progressValue: number) => void): PhaseConfig[] {
   return [
     {
       name: "evaporation",
