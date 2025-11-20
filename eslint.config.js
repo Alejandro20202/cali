@@ -1,6 +1,7 @@
 // ESLint v9 flat config
 import js from "@eslint/js";
 import tsParser from "@typescript-eslint/parser";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
 
 export default [
   // Ignorar directorios de build y dependencias
@@ -44,6 +45,9 @@ export default [
         SpeechSynthesisUtterance: "readonly",
         React: "readonly",
       },
+    },
+    plugins: {
+      "@typescript-eslint": tsPlugin,
     },
     rules: {
       // En TS, delegar indefinidos al chequeo de tipos de TypeScript
