@@ -48,6 +48,15 @@ export default [
     rules: {
       // En TS, delegar indefinidos al chequeo de tipos de TypeScript
       "no-undef": "off",
+      // Evitar falsos positivos de no-unused-vars en declaraciones de tipos/props
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+        },
+      ],
     },
   },
 
@@ -75,7 +84,7 @@ export default [
 
   // Overrides para archivos de configuración CommonJS específicos
   {
-    files: ["postcss.config.cjs"],
+    files: ["postcss.config.cjs", "babel.config.cjs", "jest.config.cjs"],
     languageOptions: {
       sourceType: "commonjs",
       globals: {

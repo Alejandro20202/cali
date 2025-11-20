@@ -292,7 +292,7 @@ export default function RobotSimulatorView() {
 
                 <ul className="space-y-2 flex-1 overflow-y-auto pr-2">
                   {[...movementLog].reverse().map((entry, idx) => {
-                    const emojis: { [command in RobotCommand]: string } = {
+                    const emojis: Record<RobotCommand, string> = {
                       forward: "⬆️",
                       back: "⬇️",
                       left: "⬅️",
